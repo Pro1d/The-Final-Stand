@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://5w31vl1sg8cu"]
+
+[ext_resource type="PackedScene" uid="uid://dg2fxyb5j4vd2" path="res://scenes/enemy.tscn" id="1_riong"]
+[ext_resource type="SpriteFrames" uid="uid://c7ros6u3lkyjl" path="res://resources/sprite_frames/horseman.tres" id="2_ev28t"]
+[ext_resource type="Texture2D" uid="uid://dryecjbqwnph1" path="res://resources/textures/shadow_large.tres" id="2_ijbbb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysqv1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cx3b6"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_swwp2"]
+radius = 11.0
+
+[node name="Horseman" instance=ExtResource("1_riong")]
+type = 3
+move_speed = Vector2(30, 0)
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_ysqv1")
+
+[node name="ShadowSprite2D" parent="Visuals" index="0"]
+texture = ExtResource("2_ijbbb")
+
+[node name="BodySprite" parent="Visuals" index="2"]
+sprite_frames = ExtResource("2_ev28t")
+offset = Vector2(-11, -20)
+
+[node name="Axis" parent="Visuals/BodySprite" index="0"]
+position = Vector2(-1, -3)
+
+[node name="WeaponAnimatedSprite2D" parent="Visuals/BodySprite/Axis" index="0"]
+position = Vector2(-12, -25)
+animation = &"great_sword"
+
+[node name="AimAnimatedSprite2D" parent="Visuals" index="4"]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" parent="PickArea2D" index="0"]
+shape = SubResource("CircleShape2D_cx3b6")
+
+[node name="CollisionShape2D" parent="HitArea2D" index="0"]
+shape = SubResource("CircleShape2D_swwp2")

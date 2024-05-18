@@ -1,0 +1,174 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdnt5c4rphuca"]
+
+[ext_resource type="Script" path="res://scripts/ui/login.gd" id="1_2xjlm"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_ii38g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwycg"]
+atlas = ExtResource("1_ii38g")
+region = Rect2(178, 214, 24, 12)
+
+[sub_resource type="Animation" id="Animation_eogxo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["."]
+}
+
+[sub_resource type="Animation" id="Animation_j8sso"]
+resource_name = "loading"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [".", "..", "..."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfpfg"]
+_data = {
+"RESET": SubResource("Animation_eogxo"),
+"loading": SubResource("Animation_j8sso")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8tjb"]
+atlas = ExtResource("1_ii38g")
+region = Rect2(48, 226, 30, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jk5cn"]
+atlas = ExtResource("1_ii38g")
+region = Rect2(152, 214, 24, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu46k"]
+atlas = ExtResource("1_ii38g")
+region = Rect2(178, 214, 44, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hafl"]
+atlas = ExtResource("1_ii38g")
+region = Rect2(113, 214, 38, 12)
+
+[node name="LoginUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2xjlm")
+
+[node name="Loading" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="PanelContainer" parent="Loading"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Loading/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Loading/CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_uwycg")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Loading/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "."
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading/CenterContainer/VBoxContainer/Label"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_mfpfg")
+}
+
+[node name="Initialized" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Initialized"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+
+[node name="LoggedIn" type="VBoxContainer" parent="Initialized/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Initialized/PanelContainer/LoggedIn"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_uwycg")
+stretch_mode = 2
+
+[node name="NameLabel" type="Label" parent="Initialized/PanelContainer/LoggedIn"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "pseudonamelong"
+horizontal_alignment = 1
+text_overrun_behavior = 1
+
+[node name="ContinueButton" type="Button" parent="Initialized/PanelContainer/LoggedIn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_h8tjb")
+icon_alignment = 1
+
+[node name="LogoutButton" type="Button" parent="Initialized/PanelContainer/LoggedIn"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_jk5cn")
+icon_alignment = 1
+
+[node name="LoggedOut" type="VBoxContainer" parent="Initialized/PanelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="HyplayButton" type="Button" parent="Initialized/PanelContainer/LoggedOut"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_gu46k")
+icon_alignment = 1
+
+[node name="GuestButton" type="Button" parent="Initialized/PanelContainer/LoggedOut"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_2hafl")
+icon_alignment = 1

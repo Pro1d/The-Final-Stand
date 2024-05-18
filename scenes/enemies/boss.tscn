@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://pxq1k37aekww"]
+
+[ext_resource type="PackedScene" uid="uid://dg2fxyb5j4vd2" path="res://scenes/enemy.tscn" id="1_dilr2"]
+[ext_resource type="Script" path="res://scripts/boss.gd" id="2_37h4p"]
+[ext_resource type="Texture2D" uid="uid://dryecjbqwnph1" path="res://resources/textures/shadow_large.tres" id="2_lqgb7"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="3_me1a4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ko2fi"]
+radius = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rxli"]
+atlas = ExtResource("3_me1a4")
+region = Rect2(80, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82pep"]
+atlas = ExtResource("3_me1a4")
+region = Rect2(112, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txugc"]
+atlas = ExtResource("3_me1a4")
+region = Rect2(208, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_heeko"]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_4rxli")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_82pep")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txugc")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ew6ir"]
+radius = 23.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rxril"]
+radius = 15.0
+
+[node name="Boss" instance=ExtResource("1_dilr2")]
+script = ExtResource("2_37h4p")
+attack_range = 25.0
+damage = 10
+aim_mode = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_ko2fi")
+
+[node name="ShadowSprite2D" parent="Visuals" index="0"]
+texture = ExtResource("2_lqgb7")
+
+[node name="BodySprite" parent="Visuals" index="2"]
+position = Vector2(-7, -16)
+sprite_frames = SubResource("SpriteFrames_heeko")
+
+[node name="ShieldSprite2D" parent="Visuals" index="3"]
+position = Vector2(0, -14)
+
+[node name="AimAnimatedSprite2D" parent="Visuals" index="4"]
+position = Vector2(1, -15)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" parent="PickArea2D" index="0"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_ew6ir")
+
+[node name="CollisionShape2D" parent="HitArea2D" index="0"]
+shape = SubResource("CircleShape2D_rxril")
+
+[node name="HitMarker2D" parent="Markers" index="0"]
+position = Vector2(0, -13)

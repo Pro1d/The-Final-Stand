@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://buuy18pc41ke2"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_kcih5"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_tossp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sr8o6"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl67g"]
+atlas = ExtResource("1_tossp")
+region = Rect2(70, 84, 5, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjwq1"]
+atlas = ExtResource("1_tossp")
+region = Rect2(75, 80, 5, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pcf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl67g")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjwq1")
+}],
+"loop": true,
+"name": &"large_bolt",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="CharacterBody2D" groups=["game_unique"]]
+collision_layer = 32
+collision_mask = 3
+motion_mode = 1
+script = ExtResource("1_kcih5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sr8o6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -7)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_4pcf5")
+animation = &"arrow"
+autoplay = "arrow"

@@ -1,7 +1,7 @@
 class_name Cooldown
 extends Node
 
-signal charges_changed(charges, max_charges)
+signal charges_changed(charges: int, max_charges: int)
 signal activated()
 signal terminated()
 

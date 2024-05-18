@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmd1eg3yy30rl"]
+
+[ext_resource type="Script" path="res://scripts/fx/text_fx.gd" id="1_qa8s4"]
+[ext_resource type="Shader" path="res://resources/shaders/color_override.gdshader" id="2_1qpb5"]
+[ext_resource type="SpriteFrames" uid="uid://cvrfc7ukinigb" path="res://resources/sprite_frames/texts.tres" id="3_wl08p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08sha"]
+resource_local_to_scene = true
+shader = ExtResource("2_1qpb5")
+shader_parameter/color = Color(1, 0.66, 0.66, 1)
+shader_parameter/ignore_color = Color(0.188235, 0.188235, 0.188235, 1)
+
+[node name="TextFx" type="Node2D" groups=["game_unique"]]
+z_index = 100
+z_as_relative = false
+script = ExtResource("1_qa8s4")
+
+[node name="Anchor" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Rounded" type="Node2D" parent="Anchor"]
+unique_name_in_owner = true
+
+[node name="Line" type="Node2D" parent="Anchor/Rounded"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_08sha")
+
+[node name="Prefix" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+unique_name_in_owner = true
+use_parent_material = true
+position = Vector2(-1, 0)
+sprite_frames = ExtResource("3_wl08p")
+animation = &"calm"
+centered = false
+offset = Vector2(0, -6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+autoplay = "default"
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Anchor/Rounded/Line"]
+use_parent_material = true
+sprite_frames = ExtResource("3_wl08p")
+centered = false
+offset = Vector2(0, -4)

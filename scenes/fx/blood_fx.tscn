@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgease0ho1ca8"]
+
+[ext_resource type="Script" path="res://scripts/fx/blood_fx.gd" id="1_r3g8n"]
+
+[sub_resource type="Curve" id="Curve_d0fyf"]
+_data = [Vector2(0.75, 1), 0.0, -4.0, 0, 1, Vector2(1, 0), -4.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j3bfu"]
+bake_resolution = 10
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.833819, 1), 0.0, -6.01755, 0, 1, Vector2(1, 0), -6.01755, 0.0, 1, 0]
+point_count = 3
+
+[node name="BloodFx" type="Node2D"]
+modulate = Color(0.619608, 0, 0, 1)
+script = ExtResource("1_r3g8n")
+
+[node name="BloodFountainParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+lifetime = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(3, 1)
+direction = Vector2(0, -1)
+spread = 30.0
+gravity = Vector2(0, 150)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_d0fyf")
+
+[node name="BloodBurstParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+rotation = -1.5708
+emitting = false
+amount = 30
+one_shot = true
+preprocess = 0.2
+explosiveness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(3, 1)
+spread = 50.0
+gravity = Vector2(0, 20)
+initial_velocity_min = 60.0
+initial_velocity_max = 70.0
+linear_accel_min = -20.99
+linear_accel_max = -20.99
+damping_min = 25.415
+damping_max = 25.415
+scale_amount_min = 5.0
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_j3bfu")

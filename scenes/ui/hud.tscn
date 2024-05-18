@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=3 uid="uid://kw6n40fk3c8d"]
+
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_p3tvg"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_whp4n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mseau"]
+atlas = ExtResource("1_p3tvg")
+region = Rect2(16, 240, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om3d7"]
+atlas = ExtResource("1_p3tvg")
+region = Rect2(0, 240, 16, 16)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_whp4n")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 256.0
+offset_bottom = 14.0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ComboLabel2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Score"
+
+[node name="ScoreContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 0
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "8"
+horizontal_alignment = 1
+
+[node name="ScoreLabel2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "2"
+horizontal_alignment = 1
+
+[node name="ScoreLabel3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "3"
+horizontal_alignment = 1
+
+[node name="ScoreLabel4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "8"
+horizontal_alignment = 1
+
+[node name="ScoreLabel5" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="ScoreLabel6" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ScoreContainer"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="ComboLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Brutal x4"
+
+[node name="HealthRange" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(82, 8)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -12.0
+offset_right = 86.0
+offset_bottom = -4.0
+grow_vertical = 0
+pivot_offset = Vector2(41, 4)
+size_flags_horizontal = 0
+size_flags_vertical = 8
+min_value = -1.0
+max_value = 81.0
+value = 9.0
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_top = 3
+stretch_margin_right = 3
+stretch_margin_bottom = 3
+texture_under = SubResource("AtlasTexture_mseau")
+texture_progress = SubResource("AtlasTexture_om3d7")
+
+[node name="HealthCPUParticles2D" type="CPUParticles2D" parent="HealthRange"]
+unique_name_in_owner = true
+modulate = Color(0.627741, 0.6038, 0.403998, 1)
+top_level = true
+z_index = 500
+position = Vector2(44, 216)
+amount = 12
+lifetime = 0.2
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(40, 4)
+direction = Vector2(0, -1)
+spread = 90.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 77.35
+initial_velocity_max = 149.17
+damping_min = 95.58
+damping_max = 95.58
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+
+[node name="Timer" type="Timer" parent="HealthRange/HealthCPUParticles2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="HealthLabel" type="Label" parent="HealthRange"]
+unique_name_in_owner = true
+z_index = 5
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -12.0
+offset_right = 28.0
+grow_vertical = 0
+size_flags_horizontal = 4
+text = "80"

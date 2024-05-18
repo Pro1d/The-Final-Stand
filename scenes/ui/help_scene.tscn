@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnap3syhb4dgn"]
+
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_1q4hf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqsf1"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(46, 71, 15, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk7j5"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqe3g"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(64, 96, 8, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc6rc"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n7kc"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bli4"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txt6l"]
+atlas = ExtResource("1_1q4hf")
+region = Rect2(64, 176, 14, 14)
+
+[node name="Scene" type="VBoxContainer"]
+custom_minimum_size = Vector2(88, 24)
+offset_right = 88.0
+offset_bottom = 24.0
+
+[node name="Empty" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 6)
+layout_mode = 2
+
+[node name="Dark" type="ColorRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.188067, 0.188067, 0.188067, 1)
+
+[node name="Grass" type="ColorRect" parent="Dark"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -7.0
+offset_right = 43.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882, 0.588235, 0.254902, 1)
+
+[node name="Move" type="TextureRect" parent="Dark"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_right = 79.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_hqsf1")
+stretch_mode = 3
+flip_h = true
+
+[node name="Player" type="TextureRect" parent="Dark"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -7.0
+offset_right = 24.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_sk7j5")
+stretch_mode = 2
+
+[node name="Spear" type="TextureRect" parent="Dark/Player"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 29.0
+offset_top = 4.0
+offset_right = 37.0
+offset_bottom = 36.0
+rotation = 1.5708
+texture = SubResource("AtlasTexture_fqe3g")
+stretch_mode = 2
+
+[node name="Enemy" type="TextureRect" parent="Dark"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = -7.0
+offset_right = 80.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_rc6rc")
+stretch_mode = 2
+flip_h = true
+
+[node name="EnemyDead" type="TextureRect" parent="Dark"]
+visible = false
+modulate = Color(1, 1, 1, 0.827451)
+layout_mode = 0
+offset_left = 64.0
+offset_top = -7.0
+offset_right = 80.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_2n7kc")
+stretch_mode = 2
+flip_h = true
+
+[node name="Target" type="TextureRect" parent="Dark"]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = -7.0
+offset_right = 80.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_1bli4")
+stretch_mode = 2
+flip_h = true
+
+[node name="Cursor" type="TextureRect" parent="Dark"]
+visible = false
+layout_mode = 0
+offset_left = 72.0
+offset_top = 8.0
+offset_right = 86.0
+offset_bottom = 22.0
+texture = SubResource("AtlasTexture_txt6l")
+stretch_mode = 2

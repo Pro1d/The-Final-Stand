@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dftntfkr0235j"]
+
+[ext_resource type="PackedScene" uid="uid://dg2fxyb5j4vd2" path="res://scenes/enemy.tscn" id="1_g18ow"]
+[ext_resource type="SpriteFrames" uid="uid://hp4mgdb2eltd" path="res://resources/sprite_frames/siege.tres" id="2_rqf4d"]
+[ext_resource type="Texture2D" uid="uid://dryecjbqwnph1" path="res://resources/textures/shadow_large.tres" id="2_rv48h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37v4x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cte37"]
+radius = 12.0
+
+[node name="Siege" instance=ExtResource("1_g18ow")]
+type = 4
+projectile = 1
+attack_range = 42.0
+damage = 2
+aim_mode = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_37v4x")
+
+[node name="ShadowSprite2D" parent="Visuals" index="0"]
+texture = ExtResource("2_rv48h")
+
+[node name="BloodFx" parent="Visuals" index="1"]
+modulate = Color(0.74, 0.74, 0.74, 1)
+
+[node name="BodySprite" parent="Visuals" index="2"]
+sprite_frames = ExtResource("2_rqf4d")
+animation = &"attack"
+offset = Vector2(-11, -15)
+
+[node name="Axis" parent="Visuals/BodySprite" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="HitArea2D" index="0"]
+shape = SubResource("CircleShape2D_cte37")

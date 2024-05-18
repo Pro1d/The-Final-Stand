@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://ciutu20ko11ls"]
+
+[ext_resource type="Environment" uid="uid://dgghuoj6rhbu5" path="res://resources/environment.tres" id="1_k11nj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+modulate = Color(4, 4, 4, 1)
+position = Vector2(-46, 21)
+color = Color(0.633757, 0.633757, 0.633757, 1)
+polygon = PackedVector2Array(258, 143, 239, 259, 330, 280, 391, 218)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color(3, 3, 3, 1)
+color = Color(1, 0.233258, 0.133961, 1)
+polygon = PackedVector2Array(258, 143, 239, 259, 330, 280, 391, 218)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+modulate = Color(3, 3, 3, 1)
+position = Vector2(-158, 127)
+color = Color(0.171686, 0.403969, 1, 1)
+polygon = PackedVector2Array(571, 130, 554, 216, 399, 181, 531, 195, 466, 120, 545, 186)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_k11nj")

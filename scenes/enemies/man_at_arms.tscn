@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqwwjfay0uahu"]
+
+[ext_resource type="PackedScene" uid="uid://dg2fxyb5j4vd2" path="res://scenes/enemy.tscn" id="1_fa6hy"]
+[ext_resource type="SpriteFrames" uid="uid://4ubuluv1121c" path="res://resources/sprite_frames/man-at-arms.tres" id="2_07re5"]
+
+[node name="ManAtArms" instance=ExtResource("1_fa6hy")]
+type = 1
+
+[node name="BodySprite" parent="Visuals" index="2"]
+sprite_frames = ExtResource("2_07re5")
+
+[node name="Axis" parent="Visuals/BodySprite" index="0"]
+position = Vector2(7, -3)
+
+[node name="WeaponAnimatedSprite2D" parent="Visuals/BodySprite/Axis" index="0"]
+position = Vector2(-1, -12)
+animation = &"axe"

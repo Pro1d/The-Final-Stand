@@ -1,0 +1,195 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs1nsi58cop4s"]
+
+[ext_resource type="PackedScene" uid="uid://cnap3syhb4dgn" path="res://scenes/ui/help_scene.tscn" id="1_3h8uk"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="3_6dwqe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc6rc"]
+atlas = ExtResource("3_6dwqe")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh6qd"]
+atlas = ExtResource("3_6dwqe")
+region = Rect2(48, 202, 64, 12)
+filter_clip = true
+
+[sub_resource type="Animation" id="Animation_53084"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scene/Dark/Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scene/Dark/Enemy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scene/Dark/EnemyDead:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scene/Dark/Target:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scene/Dark/Player/Spear:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_pd1rg"]
+resource_name = "play"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scene/Dark/Player:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scene/Dark/Enemy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scene/Dark/EnemyDead:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scene/Dark/Target:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scene/Dark/Player/Spear:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.966667, 2, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(29, 4), Vector2(29, 4), Vector2(61, 6), Vector2(61, 6), Vector2(29, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvrdi"]
+_data = {
+"RESET": SubResource("Animation_53084"),
+"play": SubResource("Animation_pd1rg")
+}
+
+[node name="HelpDefend" type="HBoxContainer"]
+offset_right = 122.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="Scene" parent="." instance=ExtResource("1_3h8uk")]
+layout_mode = 2
+
+[node name="Enemy" parent="Scene/Dark" index="3"]
+visible = true
+
+[node name="Enemy2" type="TextureRect" parent="Scene/Dark" index="4"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -7.0
+offset_right = 67.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_rc6rc")
+stretch_mode = 2
+flip_h = true
+
+[node name="Enemy3" type="TextureRect" parent="Scene/Dark" index="5"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = -7.0
+offset_right = 54.0
+offset_bottom = 9.0
+texture = SubResource("AtlasTexture_rc6rc")
+stretch_mode = 2
+flip_h = true
+
+[node name="Mouse2" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_kh6qd")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_rvrdi")
+}
+
+[editable path="Scene"]

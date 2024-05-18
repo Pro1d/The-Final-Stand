@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3flpry3vht88"]
+
+[ext_resource type="PackedScene" uid="uid://dg2fxyb5j4vd2" path="res://scenes/enemy.tscn" id="1_q4tty"]
+[ext_resource type="SpriteFrames" uid="uid://51i0eef4o6v1" path="res://resources/sprite_frames/archer.tres" id="2_ssyk8"]
+
+[node name="Archer" instance=ExtResource("1_q4tty")]
+type = 2
+projectile = 0
+attack_range = 42.0
+
+[node name="BodySprite" parent="Visuals" index="2"]
+sprite_frames = ExtResource("2_ssyk8")
+
+[node name="WeaponAnimatedSprite2D" parent="Visuals/BodySprite/Axis" index="0"]
+position = Vector2(-3, -10)
+animation = &"bow"

@@ -1,0 +1,853 @@
+[gd_scene load_steps=2 format=3 uid="uid://btrfsvmexajrx"]
+
+[ext_resource type="Script" path="res://scripts/troops_spawner.gd" id="1_1er77"]
+
+[node name="TroopsSpawner" type="Node2D"]
+script = ExtResource("1_1er77")
+
+[node name="Boss" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(348, 144)
+
+[node name="Boss" parent="Boss" instance_placeholder="res://scenes/enemies/boss.tscn"]
+
+[node name="Easy1" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="ManAtArms" parent="Easy1" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -32)
+
+[node name="ManAtArms2" parent="Easy1" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -16)
+
+[node name="ManAtArms3" parent="Easy1" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms4" parent="Easy1" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 16)
+
+[node name="ManAtArms5" parent="Easy1" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 32)
+
+[node name="Easy2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-48, 96)
+
+[node name="Archer" parent="Easy2" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, 16)
+
+[node name="Archer4" parent="Easy2" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -16)
+
+[node name="Siege" parent="Easy2" instance_placeholder="res://scenes/enemies/siege.tscn"]
+
+[node name="Easy3" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(192, 0)
+
+[node name="ManAtArms9" parent="Easy3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-36, 12)
+
+[node name="ManAtArms5" parent="Easy3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-12, -12)
+
+[node name="Archer" parent="Easy3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, 24)
+
+[node name="Archer2" parent="Easy3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-24, 0)
+
+[node name="Archer3" parent="Easy3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -24)
+
+[node name="Easy5" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(288, 0)
+
+[node name="ManAtArms" parent="Easy5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -24)
+
+[node name="ManAtArms2" parent="Easy5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-36, -12)
+
+[node name="ManAtArms3" parent="Easy5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-24, 0)
+
+[node name="ManAtArms4" parent="Easy5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-12, 12)
+
+[node name="ManAtArms5" parent="Easy5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 24)
+
+[node name="Easy6" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 96)
+
+[node name="Archer" parent="Easy6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+
+[node name="Archer2" parent="Easy6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, 16)
+
+[node name="Archer3" parent="Easy6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, 32)
+
+[node name="Archer4" parent="Easy6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -16)
+
+[node name="Archer5" parent="Easy6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -32)
+
+[node name="Easy7" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(96, 80)
+
+[node name="Archer" parent="Easy7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, 0)
+
+[node name="Archer2" parent="Easy7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, 0)
+
+[node name="Archer4" parent="Easy7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, 0)
+
+[node name="Archer5" parent="Easy7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-32, 0)
+
+[node name="Giant" parent="Easy7" instance_placeholder="res://scenes/enemies/giant.tscn"]
+
+[node name="Easy8" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(96, 32)
+
+[node name="ManAtArms" parent="Easy8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms2" parent="Easy8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 0)
+
+[node name="ManAtArms3" parent="Easy8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 0)
+
+[node name="ManAtArms4" parent="Easy8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 0)
+
+[node name="Giant" parent="Easy8" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(-64, 0)
+
+[node name="Intermediate3" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(708, 20)
+
+[node name="ManAtArms6" parent="Intermediate3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -48)
+
+[node name="ManAtArms7" parent="Intermediate3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -24)
+
+[node name="ManAtArms8" parent="Intermediate3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms9" parent="Intermediate3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 24)
+
+[node name="ManAtArms10" parent="Intermediate3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 48)
+
+[node name="Archer" parent="Intermediate3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-8, 36)
+
+[node name="Archer2" parent="Intermediate3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-8, 12)
+
+[node name="Archer3" parent="Intermediate3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-8, -12)
+
+[node name="Archer4" parent="Intermediate3" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-8, -36)
+
+[node name="Intermediate" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(760, -112)
+
+[node name="ManAtArms" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-44, -28)
+
+[node name="ManAtArms2" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-28, -20)
+
+[node name="ManAtArms3" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-44, 0)
+
+[node name="ManAtArms4" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-28, 20)
+
+[node name="ManAtArms5" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-44, 28)
+
+[node name="ManAtArms7" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-28, 0)
+
+[node name="ManAtArms9" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-60, 0)
+
+[node name="ManAtArms11" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-76, -44)
+
+[node name="ManAtArms12" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-60, -36)
+
+[node name="ManAtArms13" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-76, 0)
+
+[node name="ManAtArms14" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-60, 36)
+
+[node name="ManAtArms15" parent="Intermediate" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-76, 44)
+
+[node name="Giant" parent="Intermediate" instance_placeholder="res://scenes/enemies/giant.tscn"]
+
+[node name="Intermediate2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(640, 0)
+
+[node name="ManAtArms" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms2" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-56, -24)
+
+[node name="ManAtArms7" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-56, 24)
+
+[node name="ManAtArms3" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-40, -16)
+
+[node name="ManAtArms8" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-40, 16)
+
+[node name="ManAtArms4" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-24, -8)
+
+[node name="ManAtArms9" parent="Intermediate2" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-24, 8)
+
+[node name="Giant" parent="Intermediate2" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(-72, -32)
+
+[node name="Giant2" parent="Intermediate2" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(-72, 32)
+
+[node name="Intermediate4" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(848, 0)
+
+[node name="ManAtArms" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-40, -48)
+
+[node name="ManAtArms2" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-36, -32)
+
+[node name="ManAtArms3" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -16)
+
+[node name="ManAtArms4" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-28, 0)
+
+[node name="ManAtArms5" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-24, 16)
+
+[node name="ManAtArms6" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(8, -32)
+
+[node name="ManAtArms7" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(4, -16)
+
+[node name="ManAtArms8" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms9" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-4, 16)
+
+[node name="ManAtArms10" parent="Intermediate4" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-8, 32)
+
+[node name="Archer" parent="Intermediate4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-72, 32)
+
+[node name="Archer2" parent="Intermediate4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-68, 16)
+
+[node name="Archer3" parent="Intermediate4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, 0)
+
+[node name="Archer4" parent="Intermediate4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-60, -16)
+
+[node name="Archer5" parent="Intermediate4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-56, -32)
+
+[node name="Intermediate7" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(528, 0)
+
+[node name="Horseman" parent="Intermediate7" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+
+[node name="Horseman2" parent="Intermediate7" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-24, 0)
+
+[node name="Horseman3" parent="Intermediate7" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-48, 0)
+
+[node name="Horseman4" parent="Intermediate7" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-72, 0)
+
+[node name="Intermediate8" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(528, -112)
+
+[node name="Horseman" parent="Intermediate8" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(0, -8)
+
+[node name="Horseman6" parent="Intermediate8" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(0, 12)
+
+[node name="Intermediate5" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(624, -112)
+
+[node name="Siege" parent="Intermediate5" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(0, -36)
+
+[node name="Siege2" parent="Intermediate5" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(0, -12)
+
+[node name="Siege3" parent="Intermediate5" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(0, 12)
+
+[node name="Siege4" parent="Intermediate5" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(0, 36)
+
+[node name="Archer" parent="Intermediate5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, 52)
+
+[node name="Archer2" parent="Intermediate5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -52)
+
+[node name="Hard8" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(916, 240)
+
+[node name="ManAtArms" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -32)
+
+[node name="ManAtArms2" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, -32)
+
+[node name="ManAtArms4" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 32)
+
+[node name="ManAtArms5" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 32)
+
+[node name="ManAtArms6" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -32)
+
+[node name="ManAtArms10" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 32)
+
+[node name="ManAtArms12" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -32)
+
+[node name="ManAtArms14" parent="Hard8" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 32)
+
+[node name="Archer" parent="Hard8" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-32, -4)
+
+[node name="Archer4" parent="Hard8" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, 0)
+
+[node name="Archer2" parent="Hard8" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, -8)
+
+[node name="Archer3" parent="Hard8" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, -12)
+
+[node name="Giant" parent="Hard8" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(0, 4)
+
+[node name="Giant2" parent="Hard8" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(-64, -32)
+
+[node name="Giant3" parent="Hard8" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(-64, 32)
+
+[node name="Hard7" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(816, 240)
+
+[node name="ManAtArms" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -32)
+
+[node name="ManAtArms6" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 32)
+
+[node name="ManAtArms10" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, 16)
+
+[node name="ManAtArms16" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, -32)
+
+[node name="ManAtArms11" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -32)
+
+[node name="ManAtArms12" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 32)
+
+[node name="ManAtArms13" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms15" parent="Hard7" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -16)
+
+[node name="Giant" parent="Hard7" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(0, 32)
+
+[node name="Giant2" parent="Hard7" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(-48, -32)
+
+[node name="Archer" parent="Hard7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, 32)
+
+[node name="Archer2" parent="Hard7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, 16)
+
+[node name="Archer3" parent="Hard7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, 0)
+
+[node name="Archer4" parent="Hard7" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, -16)
+
+[node name="Hard3" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(592, 336)
+
+[node name="ManAtArms3" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -32)
+
+[node name="ManAtArms6" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 48)
+
+[node name="ManAtArms10" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms18" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 32)
+
+[node name="ManAtArms19" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 16)
+
+[node name="ManAtArms11" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -48)
+
+[node name="ManAtArms15" parent="Hard3" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, -16)
+
+[node name="Horseman" parent="Hard3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-36, -16)
+
+[node name="Horseman2" parent="Hard3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-20, 0)
+
+[node name="Horseman3" parent="Hard3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-36, 16)
+
+[node name="Hard2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(480, 336)
+
+[node name="Horseman" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+
+[node name="Horseman2" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-24, 0)
+
+[node name="Horseman3" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-48, 0)
+
+[node name="Horseman4" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-72, 0)
+
+[node name="Horseman5" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-96, 0)
+
+[node name="Horseman6" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-120, 0)
+
+[node name="Horseman7" parent="Hard2" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-144, 0)
+
+[node name="Hard" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(704, 240)
+
+[node name="ManAtArms2" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, -28)
+
+[node name="ManAtArms3" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -36)
+
+[node name="ManAtArms4" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-44, -24)
+
+[node name="ManAtArms5" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(0, -28)
+
+[node name="ManAtArms10" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-12, 16)
+
+[node name="ManAtArms17" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-80, 28)
+
+[node name="ManAtArms18" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-36, 8)
+
+[node name="ManAtArms19" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 20)
+
+[node name="ManAtArms20" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 28)
+
+[node name="ManAtArms15" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-4, -16)
+
+[node name="ManAtArms11" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-76, 16)
+
+[node name="ManAtArms16" parent="Hard" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-68, -16)
+
+[node name="Siege" parent="Hard" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-72, 0)
+
+[node name="Siege2" parent="Hard" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-40, -8)
+
+[node name="Siege3" parent="Hard" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-8, 0)
+
+[node name="Hard6" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(704, 336)
+
+[node name="Siege4" parent="Hard6" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-16, -20)
+
+[node name="Siege5" parent="Hard6" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-48, 20)
+
+[node name="Siege3" parent="Hard6" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-32, 0)
+
+[node name="Archer3" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, -32)
+
+[node name="Archer4" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, -16)
+
+[node name="Archer5" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, 0)
+
+[node name="Archer6" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, 16)
+
+[node name="Archer7" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-64, 32)
+
+[node name="Archer8" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -32)
+
+[node name="Archer9" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, -16)
+
+[node name="Archer10" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+
+[node name="Archer11" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, 16)
+
+[node name="Archer12" parent="Hard6" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(0, 32)
+
+[node name="Hard5" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(480, 236)
+
+[node name="Horseman" parent="Hard5" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(0, -8)
+
+[node name="Horseman2" parent="Hard5" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(0, 16)
+
+[node name="Horseman3" parent="Hard5" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(0, 40)
+
+[node name="Horseman4" parent="Hard5" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(0, -32)
+
+[node name="Insane5" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(172, 240)
+
+[node name="ManAtArms2" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -28)
+
+[node name="ManAtArms3" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -32)
+
+[node name="ManAtArms4" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, -28)
+
+[node name="ManAtArms6" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-60, 16)
+
+[node name="ManAtArms10" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-4, 16)
+
+[node name="ManAtArms17" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 28)
+
+[node name="ManAtArms18" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 32)
+
+[node name="ManAtArms19" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 28)
+
+[node name="ManAtArms11" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-60, -16)
+
+[node name="ManAtArms12" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, 0)
+
+[node name="ManAtArms13" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+
+[node name="ManAtArms15" parent="Insane5" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-4, -16)
+
+[node name="Archer" parent="Insane5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-48, 0)
+
+[node name="Archer2" parent="Insane5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, 0)
+
+[node name="Archer3" parent="Insane5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-40, -16)
+
+[node name="Archer4" parent="Insane5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-24, -16)
+
+[node name="Archer5" parent="Insane5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-40, 16)
+
+[node name="Archer6" parent="Insane5" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-24, 16)
+
+[node name="Horseman" parent="Insane5" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-32, 0)
+
+[node name="Insane" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(64, 336)
+
+[node name="ManAtArms" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, 0)
+
+[node name="ManAtArms2" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 0)
+
+[node name="ManAtArms3" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 0)
+
+[node name="ManAtArms4" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 0)
+
+[node name="ManAtArms5" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, 16)
+
+[node name="ManAtArms6" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 16)
+
+[node name="ManAtArms7" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 16)
+
+[node name="ManAtArms8" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, 16)
+
+[node name="ManAtArms9" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, 32)
+
+[node name="ManAtArms10" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 32)
+
+[node name="ManAtArms11" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, 32)
+
+[node name="ManAtArms12" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, 48)
+
+[node name="ManAtArms21" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, 48)
+
+[node name="ManAtArms22" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -48)
+
+[node name="ManAtArms13" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, -16)
+
+[node name="ManAtArms14" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -16)
+
+[node name="ManAtArms15" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -16)
+
+[node name="ManAtArms16" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-16, -16)
+
+[node name="ManAtArms17" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, -32)
+
+[node name="ManAtArms18" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-48, -32)
+
+[node name="ManAtArms19" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-32, -32)
+
+[node name="ManAtArms20" parent="Insane" instance_placeholder="res://scenes/enemies/man_at_arms.tscn"]
+position = Vector2(-64, -48)
+
+[node name="Giant" parent="Insane" instance_placeholder="res://scenes/enemies/giant.tscn"]
+
+[node name="Insane4" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(176, 448)
+
+[node name="Giant" parent="Insane4" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(0, 24)
+
+[node name="Giant5" parent="Insane4" instance_placeholder="res://scenes/enemies/giant.tscn"]
+position = Vector2(0, -24)
+
+[node name="Siege" parent="Insane4" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-44, 0)
+
+[node name="Siege2" parent="Insane4" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-44, 24)
+
+[node name="Siege3" parent="Insane4" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-44, -24)
+
+[node name="Archer" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-28, -12)
+
+[node name="Archer2" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-28, 12)
+
+[node name="Archer3" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-28, 36)
+
+[node name="Archer4" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-60, 36)
+
+[node name="Archer17" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-44, 44)
+
+[node name="Archer18" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-44, -44)
+
+[node name="Archer5" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-60, 12)
+
+[node name="Archer6" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-60, -12)
+
+[node name="Archer7" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-60, -32)
+
+[node name="Archer9" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-72, 36)
+
+[node name="Archer10" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-72, 12)
+
+[node name="Archer11" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-72, -12)
+
+[node name="Archer12" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-72, -32)
+
+[node name="Archer8" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-28, -32)
+
+[node name="Archer13" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, -12)
+
+[node name="Archer14" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, 12)
+
+[node name="Archer15" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, 36)
+
+[node name="Archer16" parent="Insane4" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-16, -32)
+
+[node name="Insane3" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(64, 448)
+
+[node name="Horseman" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+
+[node name="Horseman2" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-136, 0)
+
+[node name="Horseman4" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-20, -8)
+
+[node name="Horseman5" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-68, 8)
+
+[node name="Horseman6" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-84, -8)
+
+[node name="Horseman7" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-100, 8)
+
+[node name="Horseman8" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-36, 8)
+
+[node name="Horseman10" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-116, -8)
+
+[node name="Horseman11" parent="Insane3" instance_placeholder="res://scenes/enemies/horseman.tscn"]
+position = Vector2(-52, -8)
+
+[node name="Insane2" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(192, 336)
+
+[node name="Siege" parent="Insane2" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-28, 12)
+
+[node name="Siege3" parent="Insane2" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-28, -12)
+
+[node name="Siege4" parent="Insane2" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-52, 0)
+
+[node name="Siege5" parent="Insane2" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-52, 24)
+
+[node name="Siege6" parent="Insane2" instance_placeholder="res://scenes/enemies/siege.tscn"]
+position = Vector2(-52, -24)
+
+[node name="Archer" parent="Insane2" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-76, 0)
+
+[node name="Archer2" parent="Insane2" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-76, -32)
+
+[node name="Archer3" parent="Insane2" instance_placeholder="res://scenes/enemies/archer.tscn"]
+position = Vector2(-76, 32)
+
+[node name="Giant" parent="Insane2" instance_placeholder="res://scenes/enemies/giant.tscn"]

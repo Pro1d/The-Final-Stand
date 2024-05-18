@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamInteractive" load_steps=3 format=3 uid="uid://b1drlscfxsg62"]
+
+[ext_resource type="AudioStream" uid="uid://75bp85d4uw6v" path="res://assets/musics/snow_city.ogg" id="1_u12gb"]
+[ext_resource type="AudioStream" uid="uid://dhjxf3obkact7" path="res://assets/musics/15._rush_point.ogg" id="2_dos7g"]
+
+[resource]
+clip_count = 2
+clip_0/name = &"menu"
+clip_0/stream = ExtResource("1_u12gb")
+clip_0/auto_advance = 0
+clip_1/name = &"battle"
+clip_1/stream = ExtResource("2_dos7g")
+clip_1/auto_advance = 0

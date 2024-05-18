@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://djy4ysmotgyli"]
+
+[ext_resource type="Script" path="res://scripts/throwing_spear.gd" id="1_eutlx"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_q84lw"]
+[ext_resource type="Shader" path="res://resources/shaders/color_override.gdshader" id="2_7xrjt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_od8mb"]
+shader = ExtResource("2_7xrjt")
+shader_parameter/color = Color(1, 1, 1, 0)
+shader_parameter/ignore_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fndny"]
+atlas = ExtResource("1_q84lw")
+region = Rect2(32, 64, 8, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga3m4"]
+atlas = ExtResource("1_q84lw")
+region = Rect2(72, 104, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kysle"]
+atlas = ExtResource("1_q84lw")
+region = Rect2(64, 96, 8, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnyi5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fndny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga3m4")
+}],
+"loop": true,
+"name": &"diagonal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kysle")
+}],
+"loop": true,
+"name": &"large",
+"speed": 5.0
+}]
+
+[node name="ThrowingSpear" type="Node2D"]
+script = ExtResource("1_eutlx")
+
+[node name="SpearSprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_od8mb")
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_wnyi5")
+animation = &"large"
+autoplay = "large"
+
+[node name="PeakMarker2D" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -13)

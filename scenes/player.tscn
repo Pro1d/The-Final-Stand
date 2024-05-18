@@ -1,0 +1,181 @@
+[gd_scene load_steps=19 format=3 uid="uid://dsmfe1tqyqim6"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_eiq3d"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="2_1v8ib"]
+[ext_resource type="Texture2D" uid="uid://bqkite4shh8xr" path="res://resources/textures/shadow_small.tres" id="2_6e7p2"]
+[ext_resource type="PackedScene" uid="uid://djy4ysmotgyli" path="res://scenes/throwing_spear.tscn" id="2_otcvx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3hen6"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjled"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvrmh"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(64, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd8ll"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70yxo"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiwq6"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ejy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjled")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvrmh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjled")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd8ll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70yxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fiwq6")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hn3o"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(64, 64, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj44d"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(64, 72, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54kno"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(48, 64, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35nnl"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(48, 71, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsbdc"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(48, 64, 11, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l1cq"]
+atlas = ExtResource("2_1v8ib")
+region = Rect2(48, 72, 11, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_adrpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hn3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj44d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54kno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35nnl")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsbdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l1cq")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_eiq3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3hen6")
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+z_index = -10
+z_as_relative = false
+position = Vector2(0, 1)
+texture = ExtResource("2_6e7p2")
+
+[node name="ThrowingSpear" parent="." instance=ExtResource("2_otcvx")]
+unique_name_in_owner = true
+position = Vector2(4, -6)
+
+[node name="BodySprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_6ejy0")
+animation = &"running"
+autoplay = "idle"
+frame_progress = 0.0621189
+offset = Vector2(0, -8)
+
+[node name="TargetSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 50
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_adrpx")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.720085
+offset = Vector2(0, -4.5)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="SpearHandleRight" type="Marker2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(4, -6)
+
+[node name="SpearHandleDown" type="Marker2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(4, -6)
+rotation = 1.5708
+
+[node name="SpearHandleLeft" type="Marker2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(-4, -6)
+rotation = 3.14159
+
+[node name="SpearHandleUp" type="Marker2D" parent="Node2D"]
+unique_name_in_owner = true
+position = Vector2(-4, -6)
+rotation = 1.5708

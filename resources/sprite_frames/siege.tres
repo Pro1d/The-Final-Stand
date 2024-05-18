@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://hp4mgdb2eltd"]
+
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_1kk65"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cednf"]
+atlas = ExtResource("1_1kk65")
+region = Rect2(22, 0, 22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cphyi"]
+atlas = ExtResource("1_1kk65")
+region = Rect2(0, 0, 22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y8if"]
+atlas = ExtResource("1_1kk65")
+region = Rect2(44, 0, 22, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_cednf")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cphyi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y8if")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}]

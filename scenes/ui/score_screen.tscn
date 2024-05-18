@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://nnagjk047iqg"]
+
+[ext_resource type="Theme" uid="uid://e2qgxo4dwns7" path="res://resources/themes/hud.theme" id="1_sggg6"]
+[ext_resource type="Script" path="res://scripts/ui/score_screen.gd" id="2_3ur2l"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="3_3318v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a88w5"]
+atlas = ExtResource("3_3318v")
+region = Rect2(66, 213, 17, 15)
+
+[node name="ScoreScreen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.000183105
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme = ExtResource("1_sggg6")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+script = ExtResource("2_3ur2l")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ScorePanelContainer" type="PanelContainer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/ScorePanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/ScorePanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2/ScorePanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Your score: 0"
+vertical_alignment = 1
+
+[node name="LeaderboardPanelContainer" type="PanelContainer" parent="VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/LeaderboardPanelContainer"]
+layout_mode = 2
+
+[node name="LeaderboardScrollContainer" type="ScrollContainer" parent="VBoxContainer2/LeaderboardPanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer2/LeaderboardPanelContainer/VBoxContainer/LeaderboardScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="LeaderboardGridContainer" type="GridContainer" parent="VBoxContainer2/LeaderboardPanelContainer/VBoxContainer/LeaderboardScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="TemplateNameLabel" type="Label" parent="VBoxContainer2/LeaderboardPanelContainer/VBoxContainer/LeaderboardScrollContainer/MarginContainer/LeaderboardGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PlayerName"
+
+[node name="TemplateScoreLabel" type="Label" parent="VBoxContainer2/LeaderboardPanelContainer/VBoxContainer/LeaderboardScrollContainer/MarginContainer/LeaderboardGridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "450"
+
+[node name="BackButton" type="Button" parent="VBoxContainer2/LeaderboardPanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+icon = SubResource("AtlasTexture_a88w5")
+icon_alignment = 1

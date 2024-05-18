@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm5cjv4wbysm1"]
+
+[ext_resource type="Script" path="res://scripts/troops.gd" id="1_khs7i"]
+
+[node name="Troops" type="Node2D"]
+script = ExtResource("1_khs7i")

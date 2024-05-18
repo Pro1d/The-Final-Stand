@@ -10,13 +10,21 @@ config_version=5
 
 [application]
 
-config/name="Template"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/name="The Final Stand"
+run/main_scene="res://scenes/game.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [audio]
 
 buses/default_bus_layout="res://resources/audio/default_bus_layout.tres"
+
+[autoload]
+
+Config="*res://scripts/singleton/Config.gd"
+Hyplay="*res://addons/hyplay_for_godot/./api.gd"
+MusicManagerSingleton="*res://scripts/singleton/MusicManager.gd"
+SoundFxManagerSingleton="*res://scripts/singleton/SoundFxManager.gd"
 
 [debug]
 
@@ -35,45 +43,73 @@ gdscript/warnings/unreachable_pattern=2
 gdscript/warnings/standalone_expression=2
 gdscript/warnings/standalone_ternary=2
 gdscript/warnings/incompatible_ternary=2
-gdscript/warnings/property_used_as_function=2
-gdscript/warnings/constant_used_as_function=2
-gdscript/warnings/function_used_as_property=2
 gdscript/warnings/untyped_declaration=2
-gdscript/warnings/inferred_declaration=2
 gdscript/warnings/unsafe_property_access=2
 gdscript/warnings/unsafe_method_access=2
-gdscript/warnings/unsafe_cast=2
 gdscript/warnings/unsafe_call_argument=2
 gdscript/warnings/unsafe_void_return=2
 gdscript/warnings/static_called_on_instance=2
 gdscript/warnings/redundant_static_unload=2
 gdscript/warnings/redundant_await=2
-gdscript/warnings/assert_always_true=0
+gdscript/warnings/assert_always_true=2
 gdscript/warnings/assert_always_false=2
 gdscript/warnings/integer_division=0
 gdscript/warnings/narrowing_conversion=0
 gdscript/warnings/int_as_enum_without_cast=2
 gdscript/warnings/int_as_enum_without_match=2
+gdscript/warnings/enum_variable_without_default=2
 gdscript/warnings/empty_file=2
 gdscript/warnings/confusable_identifier=2
 gdscript/warnings/confusable_local_declaration=2
 gdscript/warnings/confusable_local_usage=2
+gdscript/warnings/confusable_capture_reassignment=2
+gdscript/warnings/property_used_as_function=2
+gdscript/warnings/constant_used_as_function=2
+gdscript/warnings/function_used_as_property=2
 shader_language/warnings/treat_warnings_as_errors=true
 
 [display]
 
-window/size/viewport_width=1024
-window/size/viewport_height=768
+window/size/viewport_width=288
+window/size/viewport_height=224
+window/size/window_width_override=1152
+window/size/window_height_override=896
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/hyplay_for_godot/plugin.cfg")
+
+[global_group]
+
+game_unique=""
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+theme/custom="res://resources/themes/hud.theme"
+theme/default_font_antialiasing=0
 
 [layer_names]
 
 2d_physics/layer_1="world"
 3d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="enemy"
+2d_physics/layer_4="enemy_pick"
+2d_physics/layer_5="enemy_hitbox"
+2d_physics/layer_6="enemy_projectile"
+2d_physics/layer_7="castle"
+2d_physics/layer_8="player_boundaries"
+
+[physics]
+
+common/enable_object_picking=false
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-anti_aliasing/quality/msaa_2d=1
+2d/snap/snap_2d_transforms_to_pixel=true

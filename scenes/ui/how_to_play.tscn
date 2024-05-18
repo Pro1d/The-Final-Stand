@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://co2vj6pb344jv"]
+
+[ext_resource type="Script" path="res://scripts/ui/how_to_play.gd" id="1_mgikt"]
+[ext_resource type="Texture2D" uid="uid://bdyrjenkv55ap" path="res://assets/textures/sprites.png" id="1_o40wr"]
+[ext_resource type="PackedScene" uid="uid://41ca7mjexcib" path="res://scenes/ui/help_move.tscn" id="2_kxm73"]
+[ext_resource type="PackedScene" uid="uid://f6asqxvs0qed" path="res://scenes/ui/help_retrieve.tscn" id="3_sbsmy"]
+[ext_resource type="PackedScene" uid="uid://c1aq0tn2sfbjj" path="res://scenes/ui/help_teleport.tscn" id="4_mxvwk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsbhv"]
+atlas = ExtResource("1_o40wr")
+region = Rect2(79, 226, 42, 12)
+margin = Rect2(1, 0, 0, 0)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plwyv"]
+atlas = ExtResource("1_o40wr")
+region = Rect2(41, 201, 7, 7)
+
+[node name="HowToPlay" type="PanelContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -30.0
+offset_right = 32.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgikt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_wsbhv")
+stretch_mode = 3
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+icon = SubResource("AtlasTexture_plwyv")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HelpMove" parent="VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_kxm73")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HelpRetrieve" parent="VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_sbsmy")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HelpTeleport" parent="VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_mxvwk")]
+unique_name_in_owner = true
+layout_mode = 2

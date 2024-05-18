@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://7y5igsxwuvnt"]
+
+[ext_resource type="PackedScene" uid="uid://dg2fxyb5j4vd2" path="res://scenes/enemy.tscn" id="1_6aacq"]
+[ext_resource type="SpriteFrames" uid="uid://dwqefu2hrq5lc" path="res://resources/sprite_frames/giant.tres" id="2_6bfln"]
+[ext_resource type="Texture2D" uid="uid://blwa5yue5d5yb" path="res://resources/textures/shadow_medium.tres" id="2_vrkcb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q5tv"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sb07h"]
+radius = 9.0
+
+[node name="Giant" instance=ExtResource("1_6aacq")]
+type = 5
+damage = 2
+aim_mode = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_7q5tv")
+
+[node name="ShadowSprite2D" parent="Visuals" index="0"]
+texture = ExtResource("2_vrkcb")
+
+[node name="BodySprite" parent="Visuals" index="2"]
+sprite_frames = ExtResource("2_6bfln")
+offset = Vector2(-8, -22)
+
+[node name="Axis" parent="Visuals/BodySprite" index="0"]
+position = Vector2(8, -7)
+
+[node name="WeaponAnimatedSprite2D" parent="Visuals/BodySprite/Axis" index="0"]
+position = Vector2(-3, -15)
+animation = &"mace"
+
+[node name="AimAnimatedSprite2D" parent="Visuals" index="4"]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" parent="HitArea2D" index="0"]
+shape = SubResource("CircleShape2D_sb07h")
