@@ -128,8 +128,11 @@ func _physics_process(delta: float) -> void:
 	_delay -= delta
 	if _delay < 0:
 		_delay += 0.5
-		if _enemies.size() < MAX_ENEMIES[_stage] and _boss == null:
-			var new_enemies := _troops_spawner.make_troops(LEVELS[_stage])
+		if _enemies.size() < MAX_ENEMIES[_stage]:
+			var level := LEVELS[_stage]
+			if level.has(TroopsSpawner.Level.BOSS) and _boss != null:
+				level = [TroopsSpawner.Level.MAX] # spawn only one boss, then spawn normal troops
+			var new_enemies := _troops_spawner.make_troops(level)
 			for e in new_enemies:
 				_enemies.append(e)
 				e.died.connect(_enemies.erase.bind(e))
@@ -142,7 +145,8 @@ func _on_boss_died(boss: Boss) -> void:
 		if e == boss: continue
 		var angle := boss.global_position.angle_to_point(e.global_position)
 		var distance := boss.global_position.distance_to(e.global_position)
-		e.kill(angle, 5.0, distance / 200.0)
+		var delay := minf((distance / (16.0 * 10)) ** .5, 1.0) * 0.3
+		e.kill(angle, 5.0, delay)
 	_score += Config.BOSS_SCORE
 	_hud.update_score(_score)
 	_start_ending(true)

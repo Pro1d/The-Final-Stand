@@ -61,14 +61,15 @@ shape = SubResource("CircleShape2D_ko2fi")
 texture = ExtResource("2_lqgb7")
 
 [node name="BodySprite" parent="Visuals" index="2"]
-position = Vector2(-7, -16)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_heeko")
+offset = Vector2(-16, -15)
 
 [node name="ShieldSprite2D" parent="Visuals" index="3"]
 position = Vector2(0, -14)
 
 [node name="AimAnimatedSprite2D" parent="Visuals" index="4"]
-position = Vector2(1, -15)
+position = Vector2(0, -15)
 scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" parent="PickArea2D" index="0"]
